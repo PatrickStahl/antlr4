@@ -4,7 +4,7 @@
 # can be found in the LICENSE.txt file in the project root.
 #
 
-# A parser simulator that mimics what ANTLR's generated
+#  A parser simulator that mimics what ANTLR's generated
 #  parser code does. A ParserATNSimulator is used to make
 #  predictions via adaptivePredict but this class moves a pointer through the
 #  ATN to simulate parsing. ParserATNSimulator just
@@ -58,7 +58,7 @@ class ParserInterpreter(Parser):
         self._interp = ParserATNSimulator(self, atn, self.decisionToDFA, self.sharedContextCache)
 
     # Begin parsing at startRuleIndex#
-        def parse(self, startRuleIndex:int):
+    def parse(self, startRuleIndex:int):
         startRuleStartState = self.atn.ruleToStartState[startRuleIndex]
         rootContext = InterpreterRuleContext(None, ATNState.INVALID_STATE_NUMBER, startRuleIndex)
         if startRuleStartState.isPrecedenceRule:
